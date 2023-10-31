@@ -1,3 +1,7 @@
 a.out
-VulkanTest
 .vscode/settings.json
+Cognition Engine
+Cognition Engine.app
+Cognition Engine.exe
+.vscode/launch.json
+.vscode/tasks.json
