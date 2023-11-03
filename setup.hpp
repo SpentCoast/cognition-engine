@@ -16,12 +16,15 @@ public:
     void run();
 
 private:
-    GLFWwindow* window;
+    GLFWwindow *window;
 
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
 
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+    VkDevice device;
+
+    VkQueue graphicsQueue;
 
     struct QueueFamilyIndices
     {
@@ -41,6 +44,7 @@ private:
     void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT &createInfo);
     void setupDebugMessenger();
     void pickPhysicalDevice();
+    void createLogicalDevice();
     bool isDeviceSuitable(VkPhysicalDevice device);
     QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
     std::vector<const char *> getRequiredExtensions();
