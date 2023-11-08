@@ -28,6 +28,11 @@ private:
     VkQueue graphicsQueue;
     VkQueue presentQueue;
 
+    VkSwapchainKHR swapChain;
+    std::vector<VkImage> swapChainImage;
+    VkFormat swapChainImageFormat;
+    VkExtent2D swapChainExtent;
+
     struct QueueFamilyIndices
     {
         std::optional<uint32_t> graphicsFamily;
@@ -37,6 +42,13 @@ private:
         {
             return graphicsFamily.has_value() && presentFamily.has_value();
         }
+    };
+
+    struct SwapChainSupportDetails
+    {
+        VkSurfaceCapabilitiesKHR capabilities;
+        std::vector<VkSurfaceFormatKHR> formats;
+        std::vector<VkPresentModeKHR> presentModes;
     };
 
     void initWindow();
@@ -49,7 +61,13 @@ private:
     void createSurface();
     void pickPhysicalDevice();
     void createLogicalDevice();
+    void createSwapChain();
+    VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR> &availableFormats);
+    VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR> &availablePresentModes);
+    VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities);
+    SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
     bool isDeviceSuitable(VkPhysicalDevice device);
+    bool checkDeviceExtensionSupport(VkPhysicalDevice device);
     QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
     std::vector<const char *> getRequiredExtensions();
     bool checkValidationLayerSupport();
