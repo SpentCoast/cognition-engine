@@ -5,3 +5,7 @@ Cognition Engine.app
 Cognition Engine.exe
 .vscode/launch.json
 .vscode/tasks.json
+shaders/frag.spv
+shaders/shader.frag
+shaders/shader.vert
+shaders/vert.spv
