@@ -10,8 +10,8 @@ An IN PROGRESS game engine that will handle high quality graphics while running 
 
 ## Installation
 
-Instructions hopefully coming late 2024
+Instructions hopefully coming mid 2024
 
 ## Usage
 
-Instructions hopefully coming late 2024
+Instructions hopefully coming mid 2024
