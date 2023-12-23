@@ -34,6 +34,8 @@ private:
     VkExtent2D swapChainExtent;
     std::vector<VkImageView> swapChainImageViews;
 
+    VkPipelineLayout pipelineLayout;
+
     struct QueueFamilyIndices
     {
         std::optional<uint32_t> graphicsFamily;
