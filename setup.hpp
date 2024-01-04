@@ -34,7 +34,6 @@ private:
     VkExtent2D swapChainExtent;
     std::vector<VkImageView> swapChainImageViews;
 
-    VkRenderPass renderPass;
     VkPipelineLayout pipelineLayout;
 
     struct QueueFamilyIndices
@@ -67,7 +66,6 @@ private:
     void createLogicalDevice();
     void createSwapChain();
     void createImageViews();
-    void createRenderPass();
     void createGraphicsPipeline();
     VkShaderModule createShaderModule(const std::vector<char> &code);
     VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR> &availableFormats);
