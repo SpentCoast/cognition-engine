@@ -9,3 +9,4 @@ shaders/frag.spv
 shaders/shader.frag
 shaders/shader.vert
 shaders/vert.spv
+compile.sh
