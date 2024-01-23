@@ -50,6 +50,8 @@ private:
     std::vector<VkFence> inFlightFences;
     uint32_t currentFrame = 0;
 
+    bool framebufferResized = false;
+
     struct QueueFamilyIndices
     {
         std::optional<uint32_t> graphicsFamily;
@@ -69,9 +71,12 @@ private:
     };
 
     void initWindow();
+    static void framebufferResizeCallback(GLFWwindow *window, int width, int height);
     void initVulkan();
     void mainLoop();
+    void cleanUpSwapChain();
     void cleanUp();
+    void recreateSwapChain();
     void createInstance();
     void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT &createInfo);
     void setupDebugMessenger();
